@@ -97,7 +97,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-4">
                   A Streamlit web application that detects fake news using both Logistic Regression and Deep Learning (BiLSTM + Conv1D) models trained on multiple datasets.
                 </p>
-                <a href="#" className="text-indigo-600 hover:underline">
+                <a href="https://github.com/akshaykkl/fake-news-prediction.git" className="text-indigo-600 hover:underline" target='_blank'>
                   Learn More
                 </a>
               </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-4">
                   A Streamlit web app that predicts PC prices based on hardware specifications like CPU, GPU, RAM, etc., using a machine learning model trained on a Turkish dataset.
                 </p>
-                <a href="#" className="text-indigo-600 hover:underline">
+                <a href="https://github.com/akshaykkl/pc-price-predictor.git" className="text-indigo-600 hover:underline" target='_blank'>
                   Learn More
                 </a>
               </div>
@@ -145,7 +145,7 @@ export default function Home() {
                 <p className="text-gray-700 mb-4">
                   A personal project that is used for football auctions.
                 </p>
-                <a href="#" className="text-indigo-600 hover:underline">
+                <a href="https://github.com/akshaykkl/bpl.git" className="text-indigo-600 hover:underline" target='_blank'>
                   Learn More
                 </a>
               </div>
