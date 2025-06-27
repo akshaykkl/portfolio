@@ -95,7 +95,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-2 text-indigo-600">Project One</h3>
                 <p className="text-gray-700 mb-4">
-                  A cutting-edge solution leveraging machine learning to deliver real-time insights.
+                  A Streamlit web application that detects fake news using both Logistic Regression and Deep Learning (BiLSTM + Conv1D) models trained on multiple datasets.
                 </p>
                 <a href="#" className="text-indigo-600 hover:underline">
                   Learn More
@@ -119,7 +119,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-2 text-indigo-600">Project Two</h3>
                 <p className="text-gray-700 mb-4">
-                  An innovative web application that streamlines digital workflows for modern businesses.
+                  A Streamlit web app that predicts PC prices based on hardware specifications like CPU, GPU, RAM, etc., using a machine learning model trained on a Turkish dataset.
                 </p>
                 <a href="#" className="text-indigo-600 hover:underline">
                   Learn More
@@ -143,7 +143,7 @@ export default function Home() {
               <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-2 text-indigo-600">Project Three</h3>
                 <p className="text-gray-700 mb-4">
-                  A personal project that blends creative design with functional development.
+                  A personal project that is used for football auctions.
                 </p>
                 <a href="#" className="text-indigo-600 hover:underline">
                   Learn More
