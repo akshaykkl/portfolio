@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import Scene from '@/components/Scene';
 import { Providers } from './providers'; // We'll create this next
+import { CyberpunkNav } from '@/components/CyberpunkNav';
+import { ParticleBackground } from '@/components/ParticleBackground';
 
 export const metadata = {
   title: 'Ak | Portfolio',
