@@ -1,26 +1,113 @@
 /* globals.css */
-import './globals.css';
-import { CyberpunkNav } from '@/components/CyberpunkNav';
-import { ParticleBackground } from '@/components/ParticleBackground';
-import { CyberpunkFooter } from '@/components/CyberpunkFooter';
-import { Providers } from './providers';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-export const metadata = {
-  title: 'AK | Cyberpunk Portfolio',
-  description: 'Next-gen developer portfolio with cyberpunk aesthetics',
-};
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-cyber-dark text-white overflow-x-hidden">
-        <Providers>
-          <ParticleBackground />
-          <CyberpunkNav />
-          <main className="relative z-10 pt-20">{children}</main>
-          <CyberpunkFooter />
-        </Providers>
-      </body>
-    </html>
-  );
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5;
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Add these to your existing globals.css */
+:root {
+  --neon-blue: #00f0ff;
+  --neon-purple: #ff00f0;
+  --cyber-dark: #0a0a12;
+  --cyber-gray: #1a1a2e;
+}
+
+/* Cyberpunk text effect */
+.cyber-text {
+  text-shadow: 
+    0 0 5px var(--neon-blue),
+    0 0 10px var(--neon-blue),
+    0 0 20px var(--neon-purple);
+}
+
+/* Grid background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -2;
+}
+
+/* Glitch hover effect */
+.glitch:hover {
+  animation: glitch 0.5s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
 }
