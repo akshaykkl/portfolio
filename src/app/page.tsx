@@ -1,12 +1,11 @@
 // app/page.tsx
 'use client';
 
-
-import FloatingText from '@/components/FloatingText';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Text3D } from '@react-three/drei';
 import { Suspense } from 'react';
+import FloatingText from '@/components/FloatingText';
+import { Canvas } from '@react-three/fiber';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -17,73 +16,47 @@ const fadeInUp = {
   }),
 };
 
-const FloatingText = () => {
-  return (
-    <Canvas camera={{ position: [0, 0, 10] }}>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      <Suspense fallback={null}>
-        <Text3D
-          font="/fonts/helvetiker_regular.typeface.json"
-          size={1}
-          height={0.2}
-          curveSegments={12}
-          bevelEnabled
-          bevelThickness={0.02}
-          bevelSize={0.02}
-          bevelOffset={0}
-          bevelSegments={5}
-          position={[-3.5, 0, 0]}
-        >
-          {`AK`}
-          <meshStandardMaterial color="#4f46e5" />
-        </Text3D>
-      </Suspense>
-      <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
-    </Canvas>
-  );
-};
-
 export default function Home() {
   return (
-    <div className="space-y-20">
-      {/* Hero Section */}
-      <motion.section
-        id="home"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        custom={0}
-        variants={fadeInUp}
-        className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-500/20 to-blue-600/20 text-white py-20 relative overflow-hidden"
-      >
-        {/* Floating 3D Text */}
-        <div className="absolute w-64 h-64 -right-10 -top-10 opacity-30">
-          <Suspense fallback={null}>
-            <FloatingText />
-          </Suspense>
-        </div>
-        
-        <motion.h1 
-          className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+    <div>
+      <div className="space-y-20">
+        {/* Hero Section */}
+        <motion.section
+          id="home"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          custom={0}
+          variants={fadeInUp}
+          className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-500/20 to-blue-600/20 text-white py-20 relative overflow-hidden"
         >
-          Hi, I'm Ak 👋
-        </motion.h1>
-        
-        <motion.p 
-          className="text-xl md:text-3xl mb-8 max-w-2xl leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          I create <span className="font-bold text-indigo-300">innovative digital experiences</span> using modern web technologies and cutting-edge machine learning.
-        </motion.p>
-        
-        <motion.div 
-          className="flex gap-6"
+          {/* Floating 3D Text */}
+          <div className="absolute w-64 h-64 -right-10 -top-10 opacity-30">
+            <Suspense fallback={null}>
+              <FloatingText />
+            </Suspense>
+          </div>
+          
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Hi, I'm Ak 👋
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-3xl mb-8 max-w-2xl leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            I create <span className="font-bold text-indigo-300">innovative digital experiences</span> using modern web technologies and cutting-edge machine learning.
+          </motion.p>
+          
+          <motion.div 
+            className="flex gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
@@ -166,6 +139,7 @@ export default function Home() {
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} />
                 <mesh rotation={[0.5, 0.5, 0]}>
+                  {/* @ts-ignore: Suppress type error for octahedronGeometry */}
                   <octahedronGeometry args={[1, 0]} />
                   <meshStandardMaterial 
                     color="#4f46e5" 
@@ -202,7 +176,7 @@ export default function Home() {
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Card 1 with 3D hover effect */}
+            {/* Project Card 1 */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -213,10 +187,13 @@ export default function Home() {
               className="bg-white rounded-xl shadow-xl overflow-hidden border border-indigo-100 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400"
                   alt="Project One"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={600}
+                  height={400}
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-indigo-600/20 group-hover:bg-transparent transition-all duration-300" />
               </div>
@@ -237,7 +214,7 @@ export default function Home() {
                 </a>
               </div>
             </motion.div>
-            
+
             {/* Project Card 2 */}
             <motion.div
               initial="hidden"
@@ -249,10 +226,13 @@ export default function Home() {
               className="bg-white rounded-xl shadow-xl overflow-hidden border border-indigo-100 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400"
                   alt="Project Two"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={600}
+                  height={400}
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-indigo-600/20 group-hover:bg-transparent transition-all duration-300" />
               </div>
@@ -273,7 +253,7 @@ export default function Home() {
                 </a>
               </div>
             </motion.div>
-            
+
             {/* Project Card 3 */}
             <motion.div
               initial="hidden"
@@ -285,10 +265,13 @@ export default function Home() {
               className="bg-white rounded-xl shadow-xl overflow-hidden border border-indigo-100 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src="https://via.placeholder.com/600x400"
                   alt="Project Three"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  width={600}
+                  height={400}
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-indigo-600/20 group-hover:bg-transparent transition-all duration-300" />
               </div>
@@ -410,5 +393,6 @@ export default function Home() {
         </div>
       </motion.section>
     </div>
+  </div>
   );
 }
