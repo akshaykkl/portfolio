@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-progress": "^1.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -24,6 +25,7 @@
     "typescript": "^5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
     "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",

@@ -29,7 +29,7 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I'm Alex Chen, a passionate Computer Science student who loves merging creativity with technology. I build
+              I'm Akshay Kumar P, a passionate Computer Science student who loves merging creativity with technology. I build
               interactive experiences that push the boundaries of web development.
             </p>
           </div>
@@ -43,6 +43,10 @@ export function HeroSection() {
               View My Work
             </Button>
             <div className="flex gap-4">
+              <a href="https://github.com/akshaykkl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
               <Button
                 variant="outline"
                 size="icon"
@@ -50,6 +54,11 @@ export function HeroSection() {
               >
                 <Github className="h-5 w-5" />
               </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/akshay1024/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
               <Button
                 variant="outline"
                 size="icon"
@@ -57,6 +66,11 @@ export function HeroSection() {
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
+              </a>
+              <a href="mailto:akshaykumarkkl003@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
               <Button
                 variant="outline"
                 size="icon"
@@ -64,6 +78,7 @@ export function HeroSection() {
               >
                 <Mail className="h-5 w-5" />
               </Button>
+              </a>
             </div>
           </div>
         </div>

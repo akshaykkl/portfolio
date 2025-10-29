@@ -16,8 +16,8 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Alex Chen - Developer Portfolio",
-  description: "Computer Science Student & Full-Stack Developer",
+  title: "Akshay Kumar P - Developer Portfolio",
+  description: "Computer & Full-Stack Developer",
   generator: "v0.app",
 }
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${workSans.variable} ${openSans.variable} antialiased`}>
+    <html lang="en" className={`dark ${workSans.variable} ${openSans.variable} antialiased`}>
       <body className="font-sans">{children}</body>
     </html>
   )

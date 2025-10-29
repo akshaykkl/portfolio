@@ -6,30 +6,36 @@ import { Progress } from "@/components/ui/progress"
 export function SkillsSection() {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "AI & Machine Learning",
       skills: [
-        { name: "React/Next.js", level: 90, icon: "⚛️" },
-        { name: "TypeScript", level: 85, icon: "📘" },
-        { name: "Three.js/WebGL", level: 80, icon: "🎮" },
-        { name: "Tailwind CSS", level: 95, icon: "🎨" },
+        { name: "LLMs (OpenAI, Transformers)", level: 90, icon: "🧠" },
+        { name: "RAG (Vector DBs, Embeddings)", level: 88, icon: "🧩" },
+        { name: "Prompt Engineering / Tools", level: 92, icon: "✍️" },
+        { name: "Python (Numpy, Pandas, Scikit)", level: 90, icon: "🐍" },
+        { name: "PyTorch / TensorFlow", level: 82, icon: "🧪" },
+        { name: "NLP / CV Pipelines", level: 80, icon: "🧬" },
+        { name: "LangChain / LlamaIndex", level: 84, icon: "🔗" },
       ],
     },
     {
-      title: "Backend Development",
+      title: "Backend for AI",
       skills: [
-        { name: "Node.js", level: 85, icon: "🟢" },
-        { name: "Python", level: 90, icon: "🐍" },
-        { name: "PostgreSQL", level: 80, icon: "🐘" },
-        { name: "GraphQL", level: 75, icon: "📊" },
+        { name: "Node.js / FastAPI", level: 86, icon: "🛠️" },
+        { name: "REST / GraphQL APIs", level: 82, icon: "🔌" },
+        { name: "PostgreSQL / Prisma", level: 80, icon: "🐘" },
+        { name: "Redis / Queues", level: 74, icon: "⚙️" },
+        { name: "Auth / Security", level: 78, icon: "🔐" },
+        { name: "Deploy (Vercel, Docker)", level: 80, icon: "🚀" },
       ],
     },
     {
-      title: "Tools & Technologies",
+      title: "Frontend & Visualization",
       skills: [
-        { name: "Git/GitHub", level: 90, icon: "🔧" },
-        { name: "Docker", level: 75, icon: "🐳" },
-        { name: "AWS/Vercel", level: 80, icon: "☁️" },
-        { name: "Machine Learning", level: 70, icon: "🤖" },
+        { name: "React / Next.js", level: 90, icon: "⚛️" },
+        { name: "TypeScript", level: 88, icon: "📘" },
+        { name: "Tailwind CSS", level: 94, icon: "🎨" },
+        { name: "Three.js / WebGL", level: 82, icon: "🎮" },
+        { name: "UX / Accessibility", level: 78, icon: "🧭" },
       ],
     },
   ]
@@ -39,11 +45,11 @@ export function SkillsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-            Tech Stack: Building the Future
+            AI‑First Skillset
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm constantly learning and expanding my skill set. Here are the technologies I use to bring ideas to life
-            and create meaningful digital experiences.
+            I specialize in applied AI—designing, training, and shipping intelligent systems—with a solid foundation in
+            full‑stack development for robust, production‑ready deployments.
           </p>
         </div>
 

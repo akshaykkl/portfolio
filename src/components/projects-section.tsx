@@ -80,14 +80,14 @@ export function ProjectsSection() {
                     hoveredProject === index ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Demo
-                  </Button>
+                  <Button size="sm" variant="secondary" className="bg-white text-gray-900 hover:bg-white">
+  <Github className="h-4 w-4 mr-2" />
+  Code
+</Button>
+<Button size="sm" variant="secondary" className="bg-white text-gray-900 hover:bg-white">
+  <ExternalLink className="h-4 w-4 mr-2" />
+  Demo
+</Button>
                 </div>
               </div>
 
