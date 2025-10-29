@@ -35,19 +35,19 @@ export function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "alex.chen@email.com",
+      value: "akshaykumarkkl003.com",
       href: "mailto:alex.chen@email.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 9496154335",
       href: "tel:+15551234567",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Kasaragod, Kerala, India",
       href: "#",
     },
   ]
