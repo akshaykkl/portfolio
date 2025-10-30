@@ -4,44 +4,61 @@ import { Badge } from "@/components/ui/badge"
 export function AchievementsSection() {
   const achievements = [
     {
-      title: "Winner – AI Hackathon",
-      org: "TechFest 2025",
+      title: "Qualified – NET Exam (Assistant Professor)",
+      org: "UGC National Eligibility Test",
       date: "2025",
-      highlights: [
-        "Built a RAG assistant with vector search and evaluation harness",
-        "Deployed an inference API with observability",
-      ],
-      tags: ["LLM", "RAG", "Vector DB", "Evaluation"],
-      linkText: "Project",
-      href: "#",
+      highlights: ["Cleared one of the most competitive lectureship exams in India", "Eligible for Assistant Professor roles"],
+      tags: ["NET", "Assistant Professor", "UGC"],
+      linkText: "Certificate ",
+      href: "certificates/net.pdf", // Provide actual certificate link if available
     },
-    {
-      title: "Top 10 – Global Coding Challenge",
-      org: "CodeArena",
-      date: "2024",
-      highlights: ["Optimized graph algorithms", "Parallelized workloads"],
-      tags: ["Algorithms", "Performance"],
-      linkText: "Write‑up",
-      href: "#",
-    },
-  ]
+  //   {
+  //     title: "Winner – AI Hackathon",
+  //     org: "TechFest 2025",
+  //     date: "2025",
+  //     highlights: [
+  //       "Built a RAG assistant with vector search and evaluation harness",
+  //       "Deployed an inference API with observability",
+  //     ],
+  //     tags: ["LLM", "RAG", "Vector DB", "Evaluation"],
+  //     linkText: "Project",
+  //     href: "#",
+  //   },
+  //   {
+  //     title: "Top 10 – Global Coding Challenge",
+  //     org: "CodeArena",
+  //     date: "2024",
+  //     highlights: ["Optimized graph algorithms", "Parallelized workloads"],
+  //     tags: ["Algorithms", "Performance"],
+  //     linkText: "Write‑up",
+  //     href: "#",
+  //   },
+   ]
 
   const certifications = [
     {
-      title: "Deep Learning Specialization",
+      title: "Programming for Everybody (Getting Started with Python)",
       org: "Coursera",
-      date: "2024",
-      id: "ABC-123",
-      href: "#",
-      tags: ["Neural Nets", "CNNs", "Seq Models"],
+      date: "2021",
+      id: "",
+      href: "https://www.coursera.org/account/accomplishments/verify/YXL7MBYQPKHJ",
+      tags: ["LLMs", "RAG", "Agents"],
     },
     {
-      title: "AI Engineering",
-      org: "OpenAI (Prompting/RAG/Agents)",
+      title: "Programming in JAVA",
+      org: "NPTEL",
+      date: "2023",
+      id: "",
+      href: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS49S5389001304054864",
+      tags: ["Neural Nets", "CNNs", "Seq Models, Tensorflow, Scikit Learn, Keras"],
+    },
+    {
+      title: "DeepLearning.AI TensorFlow Developer",
+      org: "Coursera",
       date: "2025",
-      id: "CERT-456",
-      href: "#",
-      tags: ["LLMs", "RAG", "Agents"],
+      id: "",
+      href: "https://www.coursera.org/account/accomplishments/professional-cert/C6MAQKTYNSO9",
+      tags: ["Neural Nets", "CNNs", "Seq Models, Tensorflow, Scikit Learn, Keras"],
     },
   ]
 

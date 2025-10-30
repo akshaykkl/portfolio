@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Toaster, toast } from 'sonner'
+import { useRef } from 'react'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,12 +18,29 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const nameRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
+  const messageRef = useRef<HTMLTextAreaElement>(null)
+
+  async function handleFormSubmit(e: React.FormEvent) {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+    const res = await fetch('https://formspree.io/f/mldowrpv', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json'
+      }
+    })
+    if (res.ok) {
+      toast.success('Your message has been sent!')
+      if (nameRef.current) nameRef.current.value = ''
+      if (emailRef.current) emailRef.current.value = ''
+      if (messageRef.current) messageRef.current.value = ''
+    } else {
+      toast.error('Something went wrong. Please try again.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -72,41 +91,44 @@ export function ContactSection() {
               <CardTitle className="font-serif text-2xl text-foreground">Send me a message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                onSubmit={handleFormSubmit}
+                className="space-y-6"
+              >
                 <div>
                   <Input
+                    ref={nameRef}
                     name="name"
                     placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full"
                   />
                 </div>
                 <div>
                   <Input
+                    ref={emailRef}
                     name="email"
                     type="email"
                     placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full"
                   />
                 </div>
                 <div>
                   <Textarea
+                    ref={messageRef}
                     name="message"
                     placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows={5}
                     className="w-full resize-none"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white" size="lg">
-                  <Send className="h-4 w-4 mr-2" />
+                <Button
+                  type="submit"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                  size="lg"
+                >
                   Send Message
                 </Button>
               </form>
@@ -145,6 +167,7 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+      <Toaster position="top-right" richColors />
     </section>
   )
 }
