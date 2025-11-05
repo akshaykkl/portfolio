@@ -42,7 +42,7 @@ export function AchievementsSection() {
       date: "2021",
       id: "",
       href: "https://www.coursera.org/account/accomplishments/verify/YXL7MBYQPKHJ",
-      tags: ["LLMs", "RAG", "Agents"],
+      tags: ["Python", "OOPS", ],
     },
     {
       title: "Programming in JAVA",
@@ -50,7 +50,7 @@ export function AchievementsSection() {
       date: "2023",
       id: "",
       href: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS49S5389001304054864",
-      tags: ["Neural Nets", "CNNs", "Seq Models, Tensorflow, Scikit Learn, Keras"],
+      tags: ["OOPS", "JAVA", "Threading"],
     },
     {
       title: "DeepLearning.AI TensorFlow Developer",
